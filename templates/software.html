@@ -1,0 +1,210 @@
+<!-- templates/software.html -->
+{{define "software"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Download TikTok Video Free App on Your Mobile Phone - {{.Site.Name}}</title>
+		<meta
+			name="description"
+			content="Tikcc Software - a TikTok Video Free App, Download TikTok Videos on iPhone or iPad or Android, Without Watermark."
+		/>
+		<link rel="stylesheet" href="/assets/css/output.css" />
+	</head>
+
+	<body>
+		<!-- header -->
+		{{template "header" .}}
+
+		<main>
+			<!-- bannber -->
+			<div
+				class="h-96 text-white text-center flex flex-col justify-center items-center lazy"
+				data-bg="/assets/img/t_banner.png"
+				style="background-size: cover"
+				x-data="x()"
+			>
+				<h1 class="w-11/12 max-w-screen-sm text-xl md:text-3xl font-bold">Download TikTok Video</h1>
+				<h2 class="w-11/12 max-w-screen-sm text-sm">Without Watermark, Unlimited Downloads, Always Free, Fast</h2>
+				<p class="w-11/12 md:w-1/2 max-w-screen-sm my-7 px-4 py-2 bg-white rounded-full flex flex-row">
+					<input
+						class="w-3/5 md:w-4/5 h-10 text-black border-none outline-none"
+						type="text"
+						placeholder="Paste a TikTok Video Link Here"
+						x-model="kw"
+					/>
+					<span class="w-2/5 md:w-1/5 h-9 leading-9 bg-black rounded-full text-center" @click="submit()">
+						Download
+					</span>
+				</p>
+				<div
+					class="
+						w-11/12
+						md:w-1/2
+						max-w-screen-sm
+						overflow-hidden
+						py-3
+						bg-indigo-700
+						rounded-lg
+						text-center text-sm text-gray-200
+					"
+				>
+					<p class="h-7 leading-7 px-3">Please make sure your TikTok link looks like this:</p>
+					<p class="h-7 leading-7 px-3">https://www.tiktok.com/@tboy00011/video/6978500605774023941</p>
+					<p class="h-7 leading-7 px-3">https://m.tiktok.com/v/6659547527571836166.html</p>
+				</div>
+			</div>
+
+			<!-- download -->
+			<div class="py-3 bg-gray-100">
+				<div class="w-11/12 max-w-screen-xl mx-auto">
+					<h2 class="py-3 text-3xl">Software</h2>
+
+					<!-- Desktop -->
+					<div class="px-5 py-5 my-5 rounded-md bg-white" x-data="{software:false}">
+						<h3 class="py-5 text-xl">Desktop</h3>
+						<ul class="flex flex-row flex-wrap">
+							<!-- MacOS -->
+							<li class="w-full md:w-1/6 px-3 py-2 bg-black text-white rounded-full flex flex-row" @click="software = true">
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_apple.png"
+										alt="tiktok downloader client for macos"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Download on</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Mac App Store</span>
+								</p>
+							</li>
+
+							<!-- Windows -->
+							<li
+								class="w-full md:w-1/6 md:mx-3 my-3 md:my-0 px-3 py-2 bg-blue-600 text-white rounded-full flex flex-row"
+								@click="software = true"
+							>
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_windows.png"
+										alt="tiktok downloader client for windows"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Available for</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Windows</span>
+								</p>
+							</li>
+
+							<!-- Linux -->
+							<li
+								class="w-full md:w-1/6 px-3 py-2 bg-yellow-500 text-white rounded-full flex flex-row"
+								@click="software = true"
+							>
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_linux.png"
+										alt="tiktok downloader client for linux"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Available for</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Linux</span>
+								</p>
+							</li>
+						</ul>
+
+						<!-- Moblie -->
+						<h3 class="py-5 text-xl">Moblie</h3>
+						<ul class="flex flex-row flex-wrap">
+							<!-- Ios -->
+							<li class="w-full md:w-1/6 px-3 py-2 bg-black text-white rounded-full flex flex-row" @click="software = true">
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_apple.png"
+										alt="tiktok downloader app for ios"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Download on</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">App Store</span>
+								</p>
+							</li>
+
+							<!-- Android -->
+							<li
+								class="w-full md:w-1/6 md:mx-3 my-3 md:my-0 px-3 py-2 bg-green-500 text-white rounded-full flex flex-row"
+								@click="software = true"
+							>
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_android.png"
+										alt="tiktok downloader app for android"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Available for</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Android</span>
+								</p>
+							</li>
+						</ul>
+
+						<!-- Extention -->
+						<h3 class="py-5 text-xl">Extention</h3>
+						<ul class="flex flex-row flex-wrap">
+							<!-- Chrome -->
+							<li class="w-full md:w-1/6 px-3 py-2 bg-sky-500 text-white rounded-full flex flex-row" @click="software = true">
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_chrome.png"
+										alt="tiktok downloader extention for chrome"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Available for</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Chrome</span>
+								</p>
+							</li>
+
+							<!-- Firefox -->
+							<li
+								class="w-full md:w-1/6 md:mx-3 my-3 md:my-0 px-3 py-2 bg-orange-500 text-white rounded-full flex flex-row"
+								@click="software = true"
+							>
+								<p class="w-1/4">
+									<img
+										class="h-10 leading-10 lazy"
+										src="/assets/img/loading.webp"
+										data-src="/assets/img/t_icon_firefox.png"
+										alt="tiktok downloader extention for firfox"
+									/>
+								</p>
+								<p class="w-3/4">
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Available for</span>
+									<span class="h-10 leading-10 md:h-5 md:leading-5">Firefox</span>
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- footer -->
+		{{template "footer" .}}
+	</body>
+</html>
+{{end}}

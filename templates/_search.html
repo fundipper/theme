@@ -1,0 +1,100 @@
+{{define "search"}}
+<div class="w-full relative group" x-data="x()">
+	<p
+		class="h-10 leading-10 px-3 my-3 justify-end items-center bg-white text-gray-600 rounded overflow-hidden"
+		:class="state === 1?'flex':'hidden'"
+		x-show="state"
+	>
+		<input class="w-full border-none outline-none" type="text" placeholder="input your keyword" x-model="kw" @keyup="submit" />
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="h-5 w-5"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+			stroke-width="2"
+			@click="x"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+			/>
+		</svg>
+	</p>
+	<p class="justify-end items-center" :class="state === 0?'flex':'hidden'" x-show="!state">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="h-5 w-5"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+			stroke-width="2"
+			@click="state=1"
+		>
+			<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+		</svg>
+	</p>
+	<ul class="max-h-64 px-3 bg-white text-gray-600 rounded overflow-auto text-left group-hover:block absolute">
+		<template x-for="(item, index) in dataList" :key="index">
+			<a :href="item.item.url">
+				<p class="h-8 leading-8" x-text="item.item.title"></p>
+				<p class="text-sm text-gray-400" x-text="item.item.summary"></p>
+			</a>
+		</template>
+	</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3/dist/fuse.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.5/dist/cdn.min.js"></script>
+<script>
+	const x = () => {
+		return {
+			state: 0,
+			kw: "",
+			dataList: [],
+			submit() {
+				fetch("/feeds.json", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+					},
+				})
+					.then((res) => res.json())
+					.then((res) => {
+						this.search(res.items);
+					})
+					.catch((err) => {});
+			},
+			x() {
+				this.kw = "";
+				this.dataList = [];
+			},
+			search(data) {
+				const options = {
+					includeScore: true,
+					keys: [
+						{
+							name: "title",
+							weight: 0.5,
+						},
+						{
+							name: "summary",
+							weight: 0.2,
+						},
+						{
+							name: "content",
+							weight: 0.3,
+						},
+					],
+				};
+
+				// Create a new instance of Fuse
+				const fuse = new Fuse(data, options);
+
+				// Now search for 'Man'
+				this.dataList = fuse.search(this.kw);
+			},
+		};
+	};
+</script>
+{{end}}

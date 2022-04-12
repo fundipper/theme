@@ -1,0 +1,44 @@
+[theme]
+copyright = "copyright © 2021 - 2022 fungo.dev"
+analysis = ""
+
+[theme.color]
+background = "bg-cyan-800"
+font = "text-white"
+
+[theme.image]
+header = "/assets/img/logo/fungo.png"
+footer = "/assets/img/logo/fungox.png"
+
+[theme.link]
+product = { name = "产品", data = [
+    { name = "文档", path = "/doc/overview/" },
+    { name = "主题", path = "/theme/" },
+    { name = "博客", path = "/post/" },
+] }
+github = { name = "开源", data = [
+    { name = "FED", path = "" },
+    { name = "BED", path = "" },
+    { name = "Lab", path = "" },
+] }
+help = { name = "帮助", data = [
+    { name = "关于我们", path = "/about/" },
+    { name = "服务条款", path = "/help/terms" },
+    { name = "隐私政策", path = "/help/privacy/" },
+] }
+social = { name = "关注", data = [
+    { name = "Twitter", path = "", icon = "/assets/img/icon/twitter.png" },
+    { name = "Youtube", path = "", icon = "/assets/img/icon/youtube.png" },
+    { name = "Github", path = "", icon = "/assets/img/icon/github.png" },
+] }
+
+[theme.author]
+andy = { name = "andy.jiang", avatar = "", email = "150haomengting@163.com" }
+
+[theme.tdk]
+index = { title = 'Fungo - simple and fast static site engine ', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+i18n = { title = 'Fungo - simple and fast static site engine ', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+catalog = { title = 'blog', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+archive = { title = 'archive', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+category = { title = 'category', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+tag = { title = 'tag', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }

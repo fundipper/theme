@@ -1,0 +1,115 @@
+<!-- templates/coldeye.html -->
+{{define "coldeye"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{.Message.Meta.title}} - {{.Site.Name}}</title>
+		<meta name="description" content="{{.Message.Meta.description}}" />
+		<link rel="stylesheet" href="/assets/css/output.css" />
+	</head>
+
+	<body>
+		<!-- header -->
+		{{template "header" .}}
+
+		<!-- main -->
+		<main class="py-3 bg-gray-100">
+			<div class="w-11/12 max-w-screen-xl mx-auto my-5 py-5 bg-white rounded-md flex flex-row flex-wrap">
+				<aside class="w-full md:w-1/4 md:border-r text-sm">
+					<ul>
+						{{range .Sidebar}}
+						<li class="px-5">
+							<p class="h-8 leading-8 text-blue-500 whitespace-nowrap ttext-ellipsis overflow-hidden">
+								<span>{{.Number}}.</span>
+								<a href="{{.Route}}">{{.Name}}</a>
+							</p>
+							{{ if ne (len .Node) 0 }}
+							<ul>
+								{{range .Node}}
+								<li class="indent-4">
+									<p class="h-8 leading-8 text-blue-500">
+										<span>{{.Number}}.</span>
+										<a href="{{.Route}}">{{.Name}}</a>
+									</p>
+									{{ if ne (len .Node) 0 }}
+									<ul>
+										{{range .Node}}
+										<li class="indent-8">
+											<p class="h-8 leading-8 text-blue-500">
+												<span>{{.Number}}.</span>
+												<a href="{{.Route}}">{{.Name}}</a>
+											</p>
+											{{ if ne (len .Node) 0 }}
+											<ul>
+												{{range .Node}}
+												<li class="indent-10">
+													<p class="h-8 leading-8 text-blue-500">
+														<span>{{.Number}}.</span>
+														<a href="{{.Route}}">{{.Name}}</a>
+													</p>
+													{{ if ne (len .Node) 0 }}
+													<ul>
+														{{range .Node}}
+														<li class="indent-12">
+															<p class="h-8 leading-8 text-blue-500">
+																<span>{{.Number}}.</span>
+																<a href="{{.Route}}">{{.Name}}</a>
+															</p>
+														</li>
+														{{end}}
+													</ul>
+													{{end}}
+												</li>
+												{{end}}
+											</ul>
+											{{end}}
+										</li>
+										{{end}}
+									</ul>
+									{{end}}
+								</li>
+								{{end}}
+							</ul>
+							{{end}}
+						</li>
+						{{end}}
+					</ul>
+				</aside>
+				<div class="w-full md:w-3/4 px-7">
+					<h1 class="text-3xl">{{.Message.Meta.title}}</h1>
+					<div class="flex flex-row justify-between md:justify-start">
+						<p class="py-3 text-gray-600 flex flex-row justify-center md:justify-start items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+								/>
+							</svg>
+							<span class="mx-2 text-sm"> {{.Message.Meta.date}}</span>
+						</p>
+					</div>
+					<div class="flex flex-row">
+						<article class="w-full {{if .Message.Meta.toc}}md:w-3/4{{end}} prose">{{safe (lazy .Message.Content)}}</article>
+						{{if .Message.Meta.toc}}
+						<aside class="hidden md:block md:w-1/4">
+							<div class="text-sm text-gray-600 sticky top-0">
+								<p class="px-7 line-10 leading-10 text-lg">table of contents</p>
+								{{safe .Message.Meta.toc}}
+							</div>
+						</aside>
+						{{end}}
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- footer -->
+		{{template "footer" .}}
+	</body>
+</html>
+{{end}}

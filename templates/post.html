@@ -1,0 +1,87 @@
+<!-- templates/post.html -->
+{{define "post"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{.Message.Meta.title}} - {{.Site.Name}}</title>
+		<meta name="description" content="{{.Message.Meta.description}}" />
+		<link rel="stylesheet" href="/assets/css/output.css" />
+	</head>
+	<body>
+		<!-- header -->
+		{{template "header" .}}
+		
+		<!-- main -->
+		<main class="py-3 bg-gray-100">
+			<div class="w-11/12 max-w-screen-lg mx-auto my-5 px-5 md:px-10 py-5 bg-white rounded-md">
+					<h1 class="text-3xl">{{.Message.Meta.title}}</h1>
+					<div class="flex flex-row justify-between md:justify-start">
+						<p class="text-gray-600 flex flex-row justify-center md:justify-start items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+								</svg>
+							<span class="mx-2 text-sm">
+								{{if .Message.Lang.State}}
+								<a href="/{{.Message.Lang.Content}}/category/{{toLower .Message.Meta.category}}/"> {{.Message.Meta.category}} </a>
+								{{else}}
+								<a href="/category/{{toLower .Message.Meta.category}}/"> {{.Message.Meta.category}} </a>
+								{{end}}
+							</span>
+						</p>
+						<p class="py-3 text-gray-600 flex flex-row justify-center md:justify-start items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+								/>
+							</svg>
+							<span class="mx-2 text-sm"> {{.Message.Meta.date}}</span>
+						</p>
+					</div>
+					<div class="flex flex-row flex-wrap md:justify-between">
+						<article class="w-full {{if .Message.TOC.State}} md:w-3/4 {{end}} prose">{{safe (lazy .Message.Content)}}</article>
+						{{if .Message.TOC.State}} 
+						<aside class="w-full md:w-1/4">
+							<div class="text-sm text-gray-600 sticky top-0">
+								<p class="px-7 line-10 leading-10 text-lg">table of contents</p>
+								<div class="prose">
+									{{safe .Message.TOC.Content}}
+								</div>
+							</div>
+						</aside>
+						{{end}}
+					</div>
+					<p class="py-3 text-gray-600 flex flex-row justify-start items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+						</svg>
+						{{$Lang := .Message.Lang}}
+						<span class="mx-2 text-sm ">
+							{{range $k,$v := .Message.Meta.tag}}
+								{{if $Lang.State}}
+								<a href="/{{$Lang.Content}}/tag/{{toLower $v}}/">{{$v}} </a>
+								{{else}}
+								<a href="/tag/{{toLower $v}}/">{{$v}} </a>
+								{{end}}
+							{{end}}
+						</span>
+					</p>
+					<!-- todo -->
+					{{$author := index .Theme.author "andy"}}
+					
+					<p>{{$author.name}}</p>
+					<p>{{$author.email}}</p>
+				</div>
+			</div>
+		</main>
+
+		<!-- footer -->
+		{{template "footer" .}}
+	</body>
+</html>
+{{end}}

@@ -1,0 +1,31 @@
+<!-- templates/page.html -->
+{{define "page"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{.Message.Meta.title}} - {{.Site.Name}}</title>
+		<meta name="description" content="{{.Message.Meta.description}}" />
+		<link rel="stylesheet" href="/assets/css/output.css" />
+	</head>
+
+	<body>
+		<!-- header -->
+		{{template "header" .}}
+		
+		<!-- main -->
+		<main class="py-3 bg-gray-100">
+			<div class="w-11/12 max-w-screen-lg mx-auto my-5 px-5 md:px-10 py-5 bg-white rounded-md">
+				<h1 class="text-3xl text-center">{{.Message.Meta.title}}</h1>
+				<div class="w-full prose">{{safe (lazy .Message.Content) }}</div>
+			</div>
+		</div>
+		</main>
+
+		<!-- footer -->
+		{{template "footer" .}}
+	</body>
+</html>
+{{end}}

@@ -1,0 +1,11 @@
+header_home		    = "Home"
+header_software		= "Software"
+header_blog	        = "Blog"
+header_about        = "About"
+
+footer_home		    = "Home"
+footer_software		= "Software"
+footer_blog	        = "Blog"
+footer_about        = "About"
+footer_terms        = "Terms of Use"
+footer_privacy      = "Privacy Policy"

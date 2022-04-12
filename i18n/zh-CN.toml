@@ -1,0 +1,11 @@
+header_home		    = "首页"
+header_software		= "软件"
+header_blog	        = "博客"
+header_about        = "关于"
+
+footer_home		    = "首页"
+footer_software		= "软件"
+footer_blog	        = "博客"
+footer_about        = "关于"
+footer_terms        = "使用条款"
+footer_privacy      = "隐私政策"
