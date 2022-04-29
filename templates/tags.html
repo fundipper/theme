@@ -1,5 +1,5 @@
-<!-- templates/page.html -->
-{{define "page"}}
+<!-- templates/tags.html -->
+{{define "tags"}}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,6 +9,11 @@
 		<title>{{.Message.Meta.title}} - {{.Site.Name}}</title>
 		<meta name="description" content="{{.Message.Meta.description}}" />
 		<link rel="stylesheet" href="/assets/css/output.css" />
+		<style>
+			.prose pre {
+				background-color: rgb(243, 244, 246) !important;
+			}
+		</style>
 	</head>
 
 	<body class="bg-gray-100">
@@ -17,9 +22,9 @@
 
 		<!-- main -->
 		<main>
-			<div class="w-11/12 max-w-screen-md mx-auto my-5 px-5 md:px-10 py-5 bg-white rounded-md">
+			<div class="w-11/12 max-w-screen-lg mx-auto my-5 px-5 md:px-10 py-5 bg-white rounded-md">
 				<h1 class="py-10 text-3xl text-center">{{.Message.Meta.title}}</h1>
-				<div class="mx-auto prose">{{safe .Message.Content }}</div>
+				<div class="max-w-none prose prose-lg prose-cyan prose-pre:bg-gray-100 prose-code:text-gray-700">{{safe .Message.Content }}</div>
 			</div>
 		</main>
 

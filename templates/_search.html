@@ -1,7 +1,7 @@
 {{define "search"}}
 <div class="w-full relative group" x-data="x()">
 	<p
-		class="h-10 leading-10 px-3 my-3 justify-end items-center bg-white text-gray-600 rounded overflow-hidden"
+		class="h-10 leading-10 px-3 my-3 justify-end items-center bg-white text-gray-700 rounded overflow-hidden"
 		:class="state === 1?'flex':'hidden'"
 		x-show="state"
 	>
@@ -35,7 +35,7 @@
 			<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
 		</svg>
 	</p>
-	<ul class="max-h-64 px-3 bg-white text-gray-600 rounded overflow-auto text-left group-hover:block absolute">
+	<ul class="max-h-64 px-3 bg-white text-gray-700 rounded overflow-auto text-left group-hover:block absolute">
 		<template x-for="(item, index) in dataList" :key="index">
 			<a :href="item.item.url">
 				<p class="h-8 leading-8" x-text="item.item.title"></p>
@@ -45,7 +45,6 @@
 	</ul>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3/dist/fuse.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.5/dist/cdn.min.js"></script>
 <script>
 	const x = () => {
 		return {

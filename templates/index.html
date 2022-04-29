@@ -9,7 +9,7 @@
 		<meta name="description" content="{{.Theme.tdk.index.description}}" />
 		<link rel="stylesheet" href="/assets/css/output.css" />
 	</head>
-	<body>
+	<body class="bg-gray-100">
 		<!-- header -->
 		{{template "header" .}}
 
@@ -26,159 +26,178 @@
 							<img class="h-10 mx-auto" src="/assets/img/icon/sample.png" alt="" />
 						</p>
 						<p class="text-2xl text-cyan-900 leading-loose">Simple</p>
-						<p class="text-base text-gray-600">only 4 command, easy to use</p>
+						<p class="text-base text-gray-700">only 5 command, easy to use</p>
 					</li>
 					<li class="w-1/2 md:w-1/3 py-6">
 						<p>
 							<img class="h-10 mx-auto" src="/assets/img/icon/quick.png" alt="" />
 						</p>
 						<p class="text-2xl text-cyan-900 leading-loose">Fast</p>
-						<p class="text-base text-gray-600">serve & build mode, both start less than 1s</p>
-					</li>
-					<li class="w-1/2 md:w-1/3 py-6">
-						<p>
-							<img class="h-10 mx-auto" src="/assets/img/icon/customize.png" alt="" />
-						</p>
-						<p class="text-2xl text-cyan-900 leading-loose">Customize</p>
-						<p class="text-base text-gray-600">setting path & router & theme all in toml</p>
-					</li>
-					<li class="w-1/2 md:w-1/3 py-6">
-						<p>
-							<img class="h-10 mx-auto" src="/assets/img/icon/markdown.png" alt="" />
-						</p>
-						<p class="text-2xl text-cyan-900 leading-loose">Markdown</p>
-						<p class="text-base text-gray-600">syntax highlighting & toc markdown support</p>
+						<p class="text-base text-gray-700">serve & build mode, both start less than 1s</p>
 					</li>
 					<li class="w-1/2 md:w-1/3 py-6">
 						<p>
 							<img class="h-10 mx-auto" src="/assets/img/icon/i18n.png" alt="" />
 						</p>
 						<p class="text-2xl text-cyan-900 leading-loose">I18N</p>
-						<p class="text-base text-gray-600">add multi-language not need to change any code</p>
+						<p class="text-base text-gray-700">add multi-language not need to change any code</p>
+					</li>
+					<li class="w-1/2 md:w-1/3 py-6">
+						<p>
+							<img class="h-10 mx-auto" src="/assets/img/icon/customize.png" alt="" />
+						</p>
+						<p class="text-2xl text-cyan-900 leading-loose">Customize</p>
+						<p class="text-base text-gray-700">can be blog & document & page and more</p>
+					</li>
+					<li class="w-1/2 md:w-1/3 py-6">
+						<p>
+							<img class="h-10 mx-auto" src="/assets/img/icon/markdown.png" alt="" />
+						</p>
+						<p class="text-2xl text-cyan-900 leading-loose">Markdown</p>
+						<p class="text-base text-gray-700">syntax highlighting & toc markdown support</p>
 					</li>
 					<li class="w-1/2 md:w-1/3 py-6">
 						<p>
 							<img class="h-10 mx-auto" src="/assets/img/icon/seo.png" alt="" />
 						</p>
 						<p class="text-2xl text-cyan-900 leading-loose">SEO</p>
-						<p class="text-base text-gray-600">automatic seo friendly siteamp</p>
+						<p class="text-base text-gray-700">automatic seo friendly siteamp & rss</p>
 					</li>
 				</ul>
 			</div>
 
-			<!-- customize -->
-			<div class="bg-white">
-				<!-- blog -->
-				<div class="w-11/12 max-w-screen-xl mx-auto py-10 text-center flex flex-row flex-wrap justify-center">
-					<div class="w-full md:w-1/4">
-						<p class="y60 fs18">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-								/>
-							</svg>
-							<span>Document</span>
-						</p>
-						<p class="y60 fs18">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"
-								/>
-							</svg>
-							<span>Blog</span>
-						</p>
-					</div>
-					<div class="w-full md:w-1/4">
-						<div>you can add a dir</div>
-						<div>you can add a page</div>
+			<!-- model -->
+			<div class="w-11/12 max-w-screen-xl mx-auto py-10" x-data="{ active: 0 }">
+				<div class="w-11/12 mx-auto h-60 flex flex-col justify-center items-center">
+					<p
+						class="bg-clip-text leading-loose text-3xl md:text-5xl text-transparent bg-gradient-to-r from-cyan-800 to-amber-300"
+					>
+						NOT ONLY A BLOG
+					</p>
+					<div
+						class="bg-clip-text leading-loose text-xl md:text-3xl text-transparent bg-gradient-to-r from-cyan-800 to-amber-300"
+					>
+						can be anyting what you want
 					</div>
 				</div>
-
-				<!-- document -->
-				<div class="w-11/12 max-w-screen-xl mx-auto text-center flex flex-row flex-wrap justify-center">
-					<div class="w-full md:w-1/4">
-						<p class="y60 fs18">not only a blog</p>
-						<p class="y60 fs18">customize it yourself</p>
-					</div>
-					<div class="w-full md:w-1/4">
-						<div>you can add a dir</div>
-						<div>you can add a page</div>
+				<ul
+					class="w-full md:w-1/2 mx-auto h-10 leading-10 my-5 text-center bg-gray-50 rounded-full overflow-hidden shadow flex flex-row"
+				>
+					<li
+						class="w-1/3 rounded-full overflow-hidden cursor-pointer"
+						:class="active === 0?'bg-amber-400 text-white':''"
+						@click="active = 0"
+					>
+						BLOG
+					</li>
+					<li
+						class="w-1/3 rounded-full overflow-hidden cursor-pointer"
+						:class="active === 1?'bg-amber-400 text-white':''"
+						@click="active = 1"
+					>
+						DOCUMENT
+					</li>
+					<li
+						class="w-1/3 rounded-full overflow-hidden cursor-pointer"
+						:class="active === 2?'bg-amber-400 text-white':''"
+						@click="active = 2"
+					>
+						PAGE
+					</li>
+					<li
+						class="w-1/3 rounded-full overflow-hidden cursor-pointer"
+						:class="active === 3?'bg-amber-400 text-white':''"
+						@click="active = 3"
+					>
+						MORE
+					</li>
+				</ul>
+				<div class="w-3/4 mx-auto py-10 flex flex-row" x-show="active === 0">
+					<p class="w-1/2 text-center">
+						<img class="w-3/4 mx-auto" src="https://cdn.fundipper.cn/110119120/fundipper/official/project/travel.webp" alt="" />
+					</p>
+					<div class="w-1/2">
+						<p class="text-xl text-center">1</p>
+						<div>sfs</div>
 					</div>
 				</div>
-
-				<!-- page -->
-				<div class="w-11/12 max-w-screen-sm mx-auto py-10 text-center flex flex-row flex-wrap justify-center">
-					<div class="w-full md:w-1/2">
-						<p class="y60 fs18">not only a blog</p>
-						<p class="y60 fs18">customize it yourself</p>
+				<div class="w-3/4 mx-auto py-10 flex flex-row" x-show="active === 1">
+					<p class="w-1/2 text-center">
+						<img class="w-3/4 mx-auto" src="https://cdn.fundipper.cn/110119120/fundipper/official/project/travel.webp" alt="" />
+					</p>
+					<div class="w-1/2">
+						<p class="text-xl text-center">2</p>
+						<div>sfs</div>
 					</div>
-					<div class="w-full md:w-1/2">
-						<div>you can add a dir</div>
-						<div>you can add a page</div>
+				</div>
+				<div class="w-3/4 mx-auto py-10 flex flex-row" x-show="active === 2">
+					<p class="w-1/2 text-center">
+						<img class="w-3/4 mx-auto" src="https://cdn.fundipper.cn/110119120/fundipper/official/project/travel.webp" alt="" />
+					</p>
+					<div class="w-1/2">
+						<p class="text-xl text-center">3</p>
+						<div>sfs</div>
+					</div>
+				</div>
+				<div class="w-3/4 mx-auto py-10 flex flex-row" x-show="active === 3">
+					<p class="w-1/2 text-center">
+						<img class="w-3/4 mx-auto" src="https://cdn.fundipper.cn/110119120/fundipper/official/project/travel.webp" alt="" />
+					</p>
+					<div class="w-1/2">
+						<p class="text-xl text-center">4</p>
+						<div>sfs</div>
 					</div>
 				</div>
 			</div>
 
 			<!-- install -->
-			<div class="bg-cyan-800 text-white">
-				<div class="w-11/12 max-w-screen-xl mx-auto py-16 flex flex-row flex-wrap">
-					<div class="w-0 md:w-2/12"></div>
-					<div class="w-full md:w-3/12 py-10 text-center">
-						<p class="h-10 my-5 text-3xl">SUPPORT ON</p>
-						<ul class="flex flex-row">
-							<li class="w-full md:w-1/3">
-								<p class="">
-									<img class="h-10 mx-auto" src="https://tikcc.app/assets/img/t_icon_apple.png" alt="" />
-								</p>
-								<p class="h-10 leading-10">Macos</p>
-							</li>
-							<li class="w-full md:w-1/3">
-								<p class="">
-									<img class="h-10 mx-auto" src="https://tikcc.app/assets/img/t_icon_linux.png" alt="" />
-								</p>
-								<p class="h-10 leading-10">Linux</p>
-							</li>
-							<li class="w-full md:w-1/3">
-								<p class="">
-									<img class="h-10 mx-auto" src="https://tikcc.app/assets/img/t_icon_windows.png" alt="" />
-								</p>
-								<p class="h-10 leading-10">Windows</p>
-							</li>
-						</ul>
-					</div>
-					<div class="w-0 md:w-2/12"></div>
-					<div class="w-full md:w-3/12">
-						<ul class="x100">
-							<li class="h-10 leading-10">brew</li>
-							<li class="h-10 leading-10 px-4 bg-yellow-300 rounded-md text-black">$ comming soon</li>
-							<li class="h-10 leading-10">snap</li>
-							<li class="h-10 leading-10 px-4 bg-yellow-300 rounded-md text-black">$ comming soon</li>
-							<li class="h-10 leading-10">choco</li>
-							<li class="h-10 leading-10 px-4 bg-yellow-300 rounded-md text-black">$ comming soon</li>
-						</ul>
-					</div>
-					<div class="w-0 md:w-2/12"></div>
+			<div class="{{.Theme.color.background}}">
+				<div class="w-11/12 max-w-screen-md mx-auto py-10 text-white flex flex-col justify-center items-center">
+					<p
+						class="h-10 leading-10 text-xl md:text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-white to-amber-300"
+					>
+						HOW TO INSTALL
+					</p>
+					<ul>
+						<li class="h-10 leading-10">go</li>
+						<li class="bg-yellow-300 rounded-md text-black text-xs md:text-base">
+							<p class="h-10 leading-10 px-5 my-5">$ go install github.com/fundipper/fungo@latest</p>
+						</li>
+						<li class="h-10 leading-10">docker</li>
+						<li class="bg-yellow-300 rounded-md text-black text-xs md:text-base">
+							<p class="h-10 leading-10 px-5 my-5">$ docker pull fundipper/fungo:latest</p>
+						</li>
+					</ul>
+					<p class="w-5/6 md:w-1/2 h-10 leading-10 flex flex-row justify-between items-center">
+						<span class="w-2/3">support on</span>
+						<span class="w-1/3 flex flex-row justify-between">
+							<img class="h-6 lazy" src="/assets/img/loading.gif" data-src="/assets/img/icon/macos.png" alt="macos" />
+							<img class="h-6 lazy" src="/assets/img/loading.gif" data-src="/assets/img/icon/linux.png" alt="linux" />
+							<img class="h-6 lazy" src="/assets/img/loading.gif" data-src="/assets/img/icon/windows.png" alt="windows" />
+						</span>
+					</p>
 				</div>
 			</div>
 
-			<!-- theme -->
-			<div class="bg-white">
-				<div class="w-11/12 max-w-screen-md mx-auto py-16 text-center flex flex-row flex-wrap">
-					<p class="w-full leading-loose text-3xl">shou case</p>
-					<div class="">
-						<div>you can add a dir</div>
-					</div>
-					<div class="">
-						<p class="">300+ themes</p>
-						<p class="">get one without any code</p>
-					</div>
-				</div>
+			<div class="w-11/12 max-w-screen-xl mx-auto py-10">
+				<p
+					class="py-5 leading-loose text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-amber-300"
+				>
+					RELEASES & TAGS
+				</p>
+				<ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+					{{ range $k,$v := .Catalog}} {{if le $k 5}}
+					<li class="px-5 md:py-5 bg-white rounded-md hover:shadow">
+						<a href="{{toLower $v.Name}}">
+							<p class="h-10 leading-10 text-cyan-900 text-xl">{{$v.Meta.title}}</p>
+							<p class="h-10 leading-10 text-gray-700 text-base whitespace-nowrap text-ellipsis overflow-hidden">
+								{{$v.Meta.description}}
+							</p>
+							<p class="h-8 leading-8 text-gray-400 text-sm">{{$v.Meta.date}}</p>
+						</a>
+					</li>
+					{{end}} {{end}}
+				</ul>
 			</div>
 		</main>
 

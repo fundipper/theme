@@ -1,44 +1,54 @@
 [theme]
 copyright = "copyright © 2021 - 2022 fungo.dev"
-analysis = ""
+analysis = "G-BM8SY54VDW"
 
 [theme.color]
-background = "bg-cyan-800"
+background = "bg-cyan-700"
 font = "text-white"
 
 [theme.image]
-header = "/assets/img/logo/fungo.png"
-footer = "/assets/img/logo/fungox.png"
+fungo = "/assets/img/logo/fungo.png"
 
-[theme.link]
-product = { name = "产品", data = [
-    { name = "文档", path = "/doc/overview/" },
-    { name = "主题", path = "/theme/" },
-    { name = "博客", path = "/post/" },
-] }
-github = { name = "开源", data = [
-    { name = "FED", path = "" },
-    { name = "BED", path = "" },
-    { name = "Lab", path = "" },
-] }
-help = { name = "帮助", data = [
-    { name = "关于我们", path = "/about/" },
-    { name = "服务条款", path = "/help/terms" },
-    { name = "隐私政策", path = "/help/privacy/" },
-] }
-social = { name = "关注", data = [
-    { name = "Twitter", path = "", icon = "/assets/img/icon/twitter.png" },
-    { name = "Youtube", path = "", icon = "/assets/img/icon/youtube.png" },
-    { name = "Github", path = "", icon = "/assets/img/icon/github.png" },
-] }
+[theme.link.header]
+name = "nav"
+data = [
+    { name = "Doc", path = "/doc/overview/" },
+    { name = "Theme", path = "/theme/" },
+    { name = "Blog", path = "/post/" },
+]
 
-[theme.author]
-andy = { name = "andy.jiang", avatar = "", email = "150haomengting@163.com" }
+[theme.author.andy]
+name = "andy.jiang"
+avatar = "https://avatars.githubusercontent.com/u/9425368?s=400&u=a8083b0ebf6ac9f66be2f2c504044b72bbf807bd&v=4"
+email = "150haomengting@163.com"
+title = "Full Stack Developer"
+summary = "10 years programming experience, familiar with golang, javascript, vue, tailwindcss. The latest is a static site engine named fungo."
 
-[theme.tdk]
-index = { title = 'Fungo - simple and fast static site engine ', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
-i18n = { title = 'Fungo - simple and fast static site engine ', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
-catalog = { title = 'blog', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
-archive = { title = 'archive', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
-category = { title = 'category', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
-tag = { title = 'tag', description = 'Fungo is a simple and fast static site engine, which can help you start writing without programming.', keyword = 'static site engine, Fungo' }
+[theme.tdk.index]
+title = 'Fungo - simple and fast static site engine'
+description = 'Fungo is a simple and fast static site engine, which can help you start your business without any programming.'
+keywords = 'Fungo, static site engine'
+
+[theme.tdk.themes]
+title = 'theme store'
+description = 'theme store of fungo, to find, download open source free themes, of course you can publish your own one.'
+
+[theme.tdk.posts]
+title = 'official blog'
+description = 'official blog of fungo, for release new version, publish new tutorials'
+
+[theme.tdk.archive]
+title = 'archive'
+description = ''
+
+[theme.tdk.category]
+title = 'category'
+description = ''
+
+[theme.tdk.tag]
+title = 'tag'
+description = ''
+
+[theme.tdk.changelog]
+title = 'changelog'
+description = ''
