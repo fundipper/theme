@@ -16,6 +16,36 @@
 		bar.classList.toggle("hidden");
 	});
 
+	window.slide = () => {
+		return {
+			index: 0,
+			submit: function (index) {
+				this.index = index;
+
+				let element;
+				switch (index) {
+					case 0:
+						element = this.$refs.blog;
+						break;
+					case 1:
+						element = this.$refs.document;
+						break;
+					case 2:
+						element = this.$refs.page;
+						break;
+					case 3:
+						element = this.$refs.more;
+						break;
+				}
+				element.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+					inline: "nearest",
+				});
+			},
+		};
+	};
+
 	window.sidebar = () => {
 		return {
 			path: window.location.pathname,

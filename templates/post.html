@@ -1,5 +1,5 @@
 <!-- templates/post.html -->
-{{define "post"}}
+{{define "post"}}{{$Lang := .Message.Lang}}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -67,23 +67,17 @@
 					</div>
 					<aside class="col-span-1">
 						<div class="md:my-5 py-5 bg-white rounded-md">
-							{{$author := index .Theme.author .Message.Meta.author}}
 							<div class="flex flex-row">
 								<p class="w-1/3">
-									<img
-										class="w-20 h-20 mx-auto rounded-full lazy"
-										src="/assets/img/loading.gif"
-										data-src="{{$author.avatar}}"
-										alt=""
-									/>
+									<img class="w-20 h-20 mx-auto rounded-full lazy" src="/assets/img/loading.gif" data-src="{{i18n $Lang.Content "author.avatar"}}" alt="" />
 								</p>
 								<p class="w-2/3 flex flex-col">
-									<span class="h-10 leading-10 text-lg">{{$author.name}}</span>
-									<span class="h-10 leading-10 text-gray-400 text-sm"> {{$author.title}} </span>
+									<span class="h-10 leading-10 text-lg">{{i18n $Lang.Content "author.name"}}</span>
+									<span class="h-10 leading-10 text-gray-400 text-sm">{{i18n $Lang.Content "author.title"}}</span>
 								</p>
 							</div>
-							<p class="w-11/12 mx-auto my-5 text-gray-700">{{$author.summary}}</p>
-							<a href="mailto:{{$author.email}}">
+							<p class="w-11/12 mx-auto my-5 text-gray-700">{{i18n $Lang.Content "author.summary"}}</p>
+							<a href="mailto:{{i18n $Lang.Content "author.email"}}">
 								<p
 									class="w-2/3 mx-auto h-10 leading-10 border hover:bg-gray-100 rounded flex felx-row justify-center items-center"
 								>
@@ -146,7 +140,6 @@
 									</svg>
 									<span class="px-3 text-lg">TAG</span>
 								</p>
-								{{$Lang := .Message.Lang}}
 								<ul class="flex flex-row flex-wrap">
 									{{range $k,$v := .Message.Meta.tag}}
 									<li class="w-1/2 h-10 leading-10 text-sm inline-flex items-center">
@@ -167,6 +160,70 @@
 						</div>
 					</aside>
 				</div>
+				{{if ne (len .Message.Top) 0}}
+				<div class="py-5">
+					<p class="py-5 text-xl">推荐阅读</p>
+					<ul class="grid grid-cols-1 md:grid-cols-3 md:gap-5">
+						{{range .Message.Top}}
+						<li class="col-span-1 rounded-md overflow-hidden bg-white flex flex-col hover:shadow">
+							<p class="w-full h-64 overflow-hidden">
+								<a href="{{toLower .Name}}">
+									<img class="w-full lazy" src="/assets/img/loading.gif" data-src="{{.Meta.thumb}}" alt="" />
+								</a>
+							</p>
+							<div class="px-5 py-5">
+								<h2 class="text-2xl whitespace-nowrap text-ellipsis overflow-hidden">
+									<a href="{{toLower .Name}}"> {{.Meta.title}} </a>
+								</h2>
+								<p class="leading-loose text-gray-700">{{.Meta.description}}</p>
+								<div class="h-10 leading-10 flex flex-row justify-between">
+									<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-4 w-4"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+											/>
+										</svg>
+										<span class="mx-2 text-sm"> {{.Meta.date}}</span>
+									</p>
+									<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-4 w-4"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+											/>
+										</svg>
+										<span class="mx-2 text-sm">
+											{{if .Lang.State}}
+											<a href="/{{.Lang.Content}}/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
+											{{else}}
+											<a href="/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
+											{{ end }}
+										</span>
+									</p>
+								</div>
+							</div>
+						</li>
+						{{end}}
+					</ul>
+				</div>
+				{{end}}
 			</div>
 		</main>
 

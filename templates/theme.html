@@ -1,5 +1,5 @@
 <!-- templates/theme.html -->
-{{define "theme"}}
+{{define "theme"}}{{$Lang := .Message.Lang}}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -64,7 +64,7 @@
 								</svg>
 								<span class="px-3 text-lg">依赖</span>
 							</p>
-							{{$Lang := .Message.Lang}}
+
 							<ul class="flex flex-row flex-wrap">
 								{{range $k,$v := .Message.Meta.tag}}
 								<li class="w-1/2 h-9 leading-9 text-sm inline-flex items-center">

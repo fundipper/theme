@@ -1,11 +1,154 @@
-header_home		    = "首页"
-header_software		= "软件"
-header_blog	        = "博客"
-header_about        = "关于"
+# author
+[author.name]
+other = "andy.jiang"
 
-footer_home		    = "首页"
-footer_software		= "软件"
-footer_blog	        = "博客"
-footer_about        = "关于"
-footer_terms        = "使用条款"
-footer_privacy      = "隐私政策"
+[author.avatar]
+other = "https://avatars.githubusercontent.com/u/9425368?s=400&u=a8083b0ebf6ac9f66be2f2c504044b72bbf807bd&v=4"
+
+[author.email]
+other = "150haomengting@163.com"
+
+[author.title]
+other = "全栈工程师"
+
+[author.summary]
+other = "10年编程经验, 熟悉 golang, javascript, vue, tailwindcss。最新的作品是Fungo，一个静态网站引擎。"
+
+# tdk
+[tdk.index.title]
+other = "Fungo - 简单快速的静态网站引擎"
+
+[tdk.index.description]
+other = "Fungo 是一个简单快速的静态站点引擎，它可以帮助您在没有任何编程的情况下开始您的业务。"
+
+[tdk.themes.title]
+other = "主题商店"
+
+[tdk.themes.description]
+other = "fungo主题商店, 查找、下载免费开源主题，当然你也可以发布你自己的主题。"
+
+[tdk.posts.title]
+other = "官方博客"
+
+[tdk.posts.description]
+other = "fungo官方博客, 公布新版本，发布新教程"
+
+[tdk.archive.title]
+other = "归档"
+
+[tdk.archive.description]
+other = "博客归档"
+
+[tdk.category.title]
+other = "分类"
+
+[tdk.category.description]
+other = "博客分类"
+
+[tdk.tag.title]
+other = "标签"
+
+[tdk.tag.description]
+other = "博客标签"
+
+[tdk.changelog.title]
+other = "更新日志"
+
+[tdk.changelog.description]
+other = "Fungo更新日志"
+
+# header
+[header.document.name]
+other = "文档"
+
+[header.document.path]
+other = "/zh/doc/overview/"
+
+[header.theme.name]
+other = "主题"
+
+[header.theme.path]
+other = "/zh/theme/"
+
+[header.blog.name]
+other = "博客"
+
+[header.blog.path]
+other = "/zh/post/"
+
+# banner
+[banner.text.title]
+other = "简单快速的静态站点引擎"
+
+[banner.text.sub]
+other = "无需任何编程即可开始您的业务"
+
+[banner.button.document]
+other = "起步"
+
+[banner.button.source]
+other = "源码"
+
+[highlight.simple.name]
+other = "简单"
+
+# highlight
+[highlight.simple.summary]
+other = "仅5条指令，上手简单"
+
+[highlight.fast.name]
+other = "快速"
+
+[highlight.fast.summary]
+other = "预览、编译，只需1s"
+
+[highlight.customize.name]
+other = "定制化"
+
+[highlight.customize.summary]
+other = "支持博客，文档，单页和自定义页面"
+
+[highlight.markdown.name]
+other = "Markdown"
+
+[highlight.markdown.summary]
+other = "自动目录、语法高亮、数学公式开箱可用"
+
+[highlight.seo.name]
+other = "SEO"
+
+[highlight.seo.summary]
+other = "自动生成Sitemap、RSS、Robots"
+
+[highlight.i18n.name]
+other = "国际化"
+
+[highlight.i18n.summary]
+other = "内置国际化支持，无需更改任何代码"
+
+# slide
+[slide.title]
+other = "不仅仅是博客"
+
+[slide.sub]
+other = "可以是你想要的任何东西"
+
+[slide.blog]
+other = "博客"
+
+[slide.document]
+other = "文档"
+
+[slide.page]
+other = "单页"
+
+[slide.more]
+other = "更多"
+
+# install
+[install.name]
+other = "如何安装"
+
+# changelog
+[changelog.name]
+other = "更新日志"

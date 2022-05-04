@@ -1,11 +1,155 @@
-header_home		    = "Home"
-header_software		= "Software"
-header_blog	        = "Blog"
-header_about        = "About"
+# author
+[author.name]
+other = "andy.jiang"
 
-footer_home		    = "Home"
-footer_software		= "Software"
-footer_blog	        = "Blog"
-footer_about        = "About"
-footer_terms        = "Terms of Use"
-footer_privacy      = "Privacy Policy"
+[author.avatar]
+other = "https://avatars.githubusercontent.com/u/9425368?s=400&u=a8083b0ebf6ac9f66be2f2c504044b72bbf807bd&v=4"
+
+[author.email]
+other = "150haomengting@163.com"
+
+[author.title]
+other = "Full Stack Developer"
+
+[author.summary]
+other = "10 years programming experience, familiar with golang, javascript, vue, tailwindcss. The latest is a static site engine named fungo."
+
+# tdk
+[tdk.index.title]
+other = "Fungo - simple and fast static site engine"
+
+[tdk.index.description]
+other = "Fungo is a simple and fast static site engine, which can help you start your business without any programming."
+
+[tdk.themes.title]
+other = "theme store"
+
+[tdk.themes.description]
+other = "theme store of fungo, to find, download open source free themes, of course you can publish your own one."
+
+[tdk.posts.title]
+other = "official blog"
+
+[tdk.posts.description]
+other = "official blog of fungo, for release new version, publish new tutorials"
+
+[tdk.archive.title]
+other = "archive"
+
+[tdk.archive.description]
+other = "archive of archive"
+
+[tdk.category.title]
+other = "category"
+
+[tdk.category.description]
+other = "category of blog"
+
+[tdk.tag.title]
+other = "tag"
+
+[tdk.tag.description]
+other = "tag of blog"
+
+[tdk.changelog.title]
+other = "changelog"
+
+[tdk.changelog.description]
+other = "changelog of fungo"
+
+# header
+[header.document.name]
+other = "Doc"
+
+[header.document.path]
+other = "/doc/overview/"
+
+# header
+[header.theme.name]
+other = "Theme"
+
+[header.theme.path]
+other = "/theme"
+
+[header.blog.name]
+other = "Blog"
+
+[header.blog.path]
+other = "/post/"
+
+# banner
+[banner.text.title]
+other = "SIMPLE AND FAST STATIC SITE ENGINE"
+
+[banner.text.sub]
+other = "start your business without any programming"
+
+[banner.button.document]
+other = "Get Started"
+
+[banner.button.source]
+other = "View Source"
+
+# highlight
+[highlight.simple.name]
+other = "Simple"
+
+[highlight.simple.summary]
+other = "only 5 command, easy to use"
+
+[highlight.fast.name]
+other = "Fast"
+
+[highlight.fast.summary]
+other = "serve / build, start less than 1s"
+
+[highlight.customize.name]
+other = "Customize"
+
+[highlight.customize.summary]
+other = "support blog & document & page and more"
+
+[highlight.markdown.name]
+other = "Markdown"
+
+[highlight.markdown.summary]
+other = "out-of-box TOC & Highlighting & Mathjax"
+
+[highlight.seo.name]
+other = "SEO"
+
+[highlight.seo.summary]
+other = "automatic sitemap & rss & robots"
+
+[highlight.i18n.name]
+other = "I18N"
+
+[highlight.i18n.summary]
+other = "built-in i18n，without change any code"
+
+# slide
+[slide.title]
+other = "NOT ONLY A BLOG"
+
+[slide.sub]
+other = "can be anything what you want"
+
+[slide.blog]
+other = "Blog"
+
+[slide.document]
+other = "Document"
+
+[slide.page]
+other = "Page"
+
+[slide.more]
+other = "More"
+
+# install
+[install.name]
+other = "HOW TO INSTALL"
+
+# changelog
+[changelog.name]
+other = "CHANGELOG"

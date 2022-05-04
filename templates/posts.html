@@ -1,14 +1,13 @@
 <!-- templates/posts.html -->
 {{define "posts"}}
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{.Theme.tdk.posts.title}} - {{.Site.Name}}</title>
-		<meta name="description" content="{{.Theme.tdk.posts.description}}" />
+		<title>{{i18n .Lang "tdk.posts.title"}} - {{.Site.Name}}</title>
+		<meta name="description" content="{{i18n .Lang "tdk.posts.description"}}" />
 		<link rel="stylesheet" href="/assets/css/output.css" />
 	</head>
 
@@ -18,53 +17,87 @@
 
 		<!-- main -->
 		<main>
-			<ul class="w-11/12 max-w-screen-xl mx-auto py-5 grid grid-cols-1 md:grid-cols-2 md:gap-5">
-				{{ range .Catalog}}
-				<li class="col-span-1 rounded-md overflow-hidden bg-white flex flex-col hover:shadow">
-					<p class="w-full h-64 overflow-hidden">
-						<a href="{{toLower .Name}}">
-							<img class="w-full lazy" src="/assets/img/loading.gif" data-src="{{.Meta.thumb}}" alt="" />
-						</a>
-					</p>
-					<div class="px-5 py-5">
-						<h2 class="text-2xl whitespace-nowrap text-ellipsis overflow-hidden">
-							<a href="{{toLower .Name}}"> {{.Meta.title}} </a>
-						</h2>
-						<p class="leading-loose text-gray-700">{{.Meta.description}}</p>
-						<div class="h-10 leading-10 flex flex-row justify-between">
-							<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-									/>
-								</svg>
-								<span class="mx-2 text-sm"> {{.Meta.date}}</span>
-							</p>
-							<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
-									/>
-								</svg>
-								<span class="mx-2 text-sm">
-									{{if .Lang.State}}
-									<a href="/{{.Lang.Content}}/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
-									{{else}}
-									<a href="/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
-									{{ end }}
-								</span>
-							</p>
+			<div class="w-11/12 max-w-screen-xl mx-auto py-5">
+				<ul class="grid grid-cols-1 md:grid-cols-2 md:gap-5">
+					{{ range .Catalog}}
+					<li class="col-span-1 rounded-md overflow-hidden bg-white flex flex-col hover:shadow">
+						<p class="w-full h-64 overflow-hidden">
+							<a href="{{toLower .Name}}">
+								<img class="w-full lazy" src="/assets/img/loading.gif" data-src="{{.Meta.thumb}}" alt="" />
+							</a>
+						</p>
+						<div class="px-5 py-5">
+							<h2 class="text-2xl whitespace-nowrap text-ellipsis overflow-hidden">
+								<a href="{{toLower .Name}}"> {{.Meta.title}} </a>
+							</h2>
+							<p class="leading-loose text-gray-700">{{.Meta.description}}</p>
+							<div class="h-10 leading-10 flex flex-row justify-between">
+								<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+										/>
+									</svg>
+									<span class="mx-2 text-sm"> {{.Meta.date}}</span>
+								</p>
+								<p class="text-gray-400 flex flex-row justify-center md:justify-start items-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"
+										/>
+									</svg>
+									<span class="mx-2 text-sm">
+										{{if .Lang.State}}
+										<a href="/{{.Lang.Content}}/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
+										{{else}}
+										<a href="/category/{{toLower .Meta.category}}/"> {{.Meta.category}} </a>
+										{{ end }}
+									</span>
+								</p>
+							</div>
 						</div>
-					</div>
-				</li>
+					</li>
+					{{end}}
+				</ul>
+				{{if ne .Page.Total 0}}
+				<ul class="my-5 bg-white rounded-md flex flex-row">
+					<!-- first -->
+					<li class="w-1/4 md:w-1/12 h-10 leading-10 text-center text-sm border-r border-gray-100 hover:bg-gray-50">
+						<a class="text-gray-700" href="{{.Page.Path}}">首页</a>
+					</li>
+					<!-- pre -->
+					{{if ne .Page.Pre 0}}
+					<li class="w-1/4 md:w-1/12 h-10 leading-10 text-center text-sm border-r border-gray-100 hover:bg-gray-50">
+						<a class="text-gray-700" href="{{.Page.Path}}page/{{.Page.Pre}}/">上一页</a>
+					</li>
+					{{end}}
+					<!-- path -->
+					{{$Path :=.Page.Path}}
+					<!-- range -->
+					{{range .Page.Data}}
+					<li class="hidden md:block flex-1 h-10 leading-10 text-center border-r border-gray-100 hover:bg-gray-50">
+						<a href="{{$Path}}page/{{.}}/">{{add . 1}}</a>
+					</li>
+					{{end}}
+					<!-- next -->
+					{{if ne .Page.Next 0}}
+					<li class="w-1/4 md:w-1/12 h-10 leading-10 text-center text-sm border-r border-gray-100 hover:bg-gray-50">
+						<a class="text-gray-700" href="{{.Page.Path}}page/{{.Page.Next}}/">下一页</a>
+					</li>
+					{{end}}
+					<!-- last -->
+					<li class="w-1/4 md:w-1/12 h-10 leading-10 text-center text-sm hover:bg-gray-50">
+						<a class="text-gray-700" href="{{.Page.Path}}page/{{.Page.Total}}/">尾页</a>
+					</li>
+				</ul>
 				{{end}}
-			</ul>
+			</div>
 		</main>
 
 		<!-- footer -->
